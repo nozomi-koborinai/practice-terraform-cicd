@@ -5,7 +5,8 @@ resource "google_app_engine_application" "default" {
   location_id = "asia-northeast1"
 
   depends_on = [
-    google_firestore_database.firestore
+    google_firestore_database.firestore,
+    google_firestore_document.docs,
   ]
 }
 
