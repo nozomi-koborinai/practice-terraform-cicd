@@ -3,7 +3,7 @@ locals {
     "question-1" = {
       collection  = "quiz"
       document_id = "question-1"
-      fields      = jsonencode({
+      fields = jsonencode({
         "question" = {
           "stringValue" = "First Question"
         },
@@ -15,7 +15,7 @@ locals {
     "question-2" = {
       collection  = "quiz"
       document_id = "question-2"
-      fields      = jsonencode({
+      fields = jsonencode({
         "question" = {
           "stringValue" = "Second Question"
         },
@@ -27,7 +27,7 @@ locals {
     "question-3" = {
       collection  = "quiz"
       document_id = "question-3"
-      fields      = jsonencode({
+      fields = jsonencode({
         "question" = {
           "stringValue" = "Third Question"
         },

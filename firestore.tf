@@ -1,11 +1,11 @@
 # Provisions the Firestore database instance.
 resource "google_firestore_database" "firestore" {
-  provider                    = google-beta
-  project                     = var.project_id
-  name                        = "(default)"
-  location_id                 = "asia-northeast1"
-  type                        = "FIRESTORE_NATIVE"
-  concurrency_mode            = "OPTIMISTIC"
+  provider         = google-beta
+  project          = var.project_id
+  name             = "(default)"
+  location_id      = "asia-northeast1"
+  type             = "FIRESTORE_NATIVE"
+  concurrency_mode = "OPTIMISTIC"
 
   # Wait for Firebase to be enabled in the Google Cloud project before initializing Firestore.
   depends_on = [
@@ -19,12 +19,12 @@ resource "google_firebaserules_ruleset" "firestore" {
   project  = var.project_id
   source {
     files {
-      name = "firestore.rules"
+      name    = "firestore.rules"
       content = file("firebase_rules/firestore.rules")
     }
   }
 
-	lifecycle {
+  lifecycle {
     create_before_destroy = true
   }
 
@@ -37,7 +37,7 @@ resource "google_firebaserules_ruleset" "firestore" {
 # Releases the ruleset for the Firestore instance.
 resource "google_firebaserules_release" "firestore" {
   provider     = google-beta
-  name         = "cloud.firestore"  # must be cloud.firestore
+  name         = "cloud.firestore" # must be cloud.firestore
   ruleset_name = google_firebaserules_ruleset.firestore.name
   project      = var.project_id
 

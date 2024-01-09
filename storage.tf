@@ -42,5 +42,5 @@ resource "google_firebaserules_release" "default-bucket" {
   provider     = google-beta
   name         = "firebase.storage/${google_app_engine_application.default.default_bucket}"
   ruleset_name = "projects/${var.project_id}/rulesets/${google_firebaserules_ruleset.storage.name}"
-  project      =  var.project_id
+  project      = var.project_id
 }

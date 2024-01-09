@@ -1,11 +1,11 @@
 variable "billing_account" {
-  type        = string
+  type = string
 }
 
 variable "project_name" {
-  type        = string
+  type = string
 }
 
 variable "project_id" {
-  type        = string
+  type = string
 }
